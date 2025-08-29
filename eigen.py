@@ -5,9 +5,9 @@ A = sp.Matrix([[1, 1, 3],
               [1, 5, 1],
               [3, 1, 1]])
 
-U = sp.Matrix([[1, 0, 0], 
-              [0, 1, 0],
-              [0, 0, 1]])
+#U = sp.Matrix([[1, 0, 0], 
+#              [0, 1, 0],
+#              [0, 0, 1]])
 
 x1 = sp.symbols("x1")
 x2 = sp.symbols("x2")
@@ -16,8 +16,6 @@ x3 = sp.symbols("x3")
 X= sp.Matrix([[x1], 
               [x2],
               [x3]])
-#eigenvalues, eigenvectors = np.linalg.eig(A)
-#print(eigenvalues, eigenvectors)
 
 a = sp.symbols("a")
 
@@ -34,10 +32,7 @@ if A.shape[0] == A.shape[1]:
    print(roots)
    J=(A-a*U)*X
    print(J)
-#   val=0
-#   for i in roots:
-#     val = J.subs({a:i})
-#     print(val)
+
    val1 = J.subs({a:roots[0]})
    print(val1)
    eq1=val1[0]
